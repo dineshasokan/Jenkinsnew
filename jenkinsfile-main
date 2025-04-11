@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     // Trigger the sub-pipeline job (another Jenkins job)
-                    build job: 'System-Info-SubPipeline'
+                    build job: 'test'
                 }
             }
         }
