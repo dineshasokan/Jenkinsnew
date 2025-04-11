@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Stage 1: Get-Date') {
+            steps {
+                powershell 'Get-Date'
+            }
+        }
+        stage('Stage 2: Get Services') {
+            steps {
+                powershell 'Get-Service'
+            }
+        }
+        stage('Stage 3: System Info') {
+            steps {
+                powershell 'Get-ComputerInfo'
+            }
+        }
+        stage('Stage 4: List Processes') {
+            steps {
+                powershell 'Get-Process'
+            }
+        }
+        stage('Stage 5: Disk Usage') {
+            steps {
+                powershell 'Get-PSDrive -PSProvider FileSystem'
+            }
+        }
+    }
+}

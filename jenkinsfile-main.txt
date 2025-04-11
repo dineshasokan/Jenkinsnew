@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Run System Info Pipeline') {
+            steps {
+                script {
+                    // Trigger the sub-pipeline job (another Jenkins job)
+                    build job: 'System-Info-SubPipeline'
+                }
+            }
+        }
+    }
+}
